@@ -2,8 +2,10 @@ import {Center, Text, Icon} from "native-base";
 import Logo from '../assets/logo.svg';
 import {Fontisto} from '@expo/vector-icons'
 import { Button } from "../components/Button";
+import { useAuth } from "../hooks/useAuth";
 
 export function SignIn() {
+  const {signIn, user} = useAuth();
   return (
     <Center flex={1} bgColor="gray.900" p={7}>
       <Logo width={212} height={40} />
@@ -14,6 +16,7 @@ export function SignIn() {
         color="white"
         mt="12"
         fontSize="sm"
+        onPress={signIn}
       />
       <Text 
         fontSize="sm" 
